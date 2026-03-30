@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Handleiding (1)</title>
+</head>
+<body>
+<h1>Werken met workflows</h1>
+<h2>Opbouw van het beheerportaal</h2>
+<p>Het beheerportaal staat op https://beheer.geonovum.nl. Voordat u kunt inloggen is het nodig dat Geonovum een account aanmaakt.</p>
+<p>Inlogscherm van het beheerportaal</p>
+<p>Na inlog is er een overzicht van projecten.</p>
+<p>Opbouw met een tegel-pagina</p>
+<p>De workflows voor het publiceren van documenten staan onder tegel ‘Algemeen’. Voor deze handleiding gaan we uit van de workflow ‘Werkversie’.</p>
+<p>Weergave van de algemene workflows</p>
+<h2>Opbouw van een workflow-pagina</h2>
+<p>De workflow-pagina bevat een link naar de repository ‘word2werkversie’. Hier kunt u het sjabloon respec.dotm downloaden.</p>
+<p>Opbouw van een workflow-pagina</p>
+<p>De algemene gedachte achter een workflow is: ‘Je hebt een input, daar doe je wat mee en dan krijg je een output’. Een workflow is in het beheerportaal net zo opgebouwd:</p>
+<p>‘Input’: Dit blok bevat een inlog-mogelijkheid.</p>
+<p>‘Stappen’: Dit blok bevat alle stappen in de workflow.</p>
+<p>‘Output’: Dit blok bevat het resultaat van de workflow.</p>
+<p>Na voltooiing van de upload kunt u de workflow starten. Alle stappen worden uitgevoerd. Een groen vinkje geeft aan dat de stap is voltooid, een rood kruis geeft aan dat er wat mis is. Door op het pijlpuntje te klikken, krijgt u meer informatie.</p>
+<p>Stappen in de workflow word2werkversie</p>
+<p>De workflow word2werkversie converteert een Word-bestand naar een ReSpec-werkversie en plaatst deze in een repository en maakt er een pages-versie van. Als bijproduct is het mogelijk om het resultaat te downloaden.</p>
+<p>Output toont ook de inhoud van tekstdocumenten</p>
+<h1>Koppelen aan het sjabloon</h1>
+<h2>Sjabloon respec.dotm downloaden</h2>
+<p>Een bestaand Word-bestand moet gekoppeld worden aan sjabloon respec.dotm. Hiervoor zijn in Word verschillende stappen nodig.</p>
+<p>Voeg aan het menu optie ‘Ontwikkelaars’ toe. Dit is een eenmalige handeling.</p>
+<p>Koppel het Word-bestand aan het sjabloon.</p>
+<p>Vul alle benodigde metadata in.</p>
+<h2>Optie ‘Ontwikkelaars’ toevoegen</h2>
+<p>Standaard staat in Word de optie ‘Ontwikkelaars’ uit. Deze zet u aan bij menu-optie ‘Bestand’, ‘Opties’. Bij ‘Lint aanpassen’ vinkt u optie ‘Ontwikkelaars’ aan. Deze verschijnt dan in het menu.</p>
+<p>Vink optie ‘Ontwikkelaars’ aan</p>
+<h2>Aan het sjabloon koppelen</h2>
+<p>Bij menu-optie ‘Onwikkelaars’ ziet u in de werkbalk rechts de optie ‘Documentsjabloon’. Als u deze selecteert, krijgt u het volgende scherm.</p>
+<p>Scherm ‘Sjablonen en invoegtoepassingen’</p>
+<p>Met ‘Bijvoegen’ selecteert u sjabloon respec.dotm in de map ‘input’ van uw lokale repository. Met de optie ‘Stijlen van het document automatisch bijwerken’ kunt u de stijlen in het document overschrijven door de stijlen in het sjabloon. Dit heeft voordelen omdat u daarmee automatische nummeringen in de koppenstructuur importeert, maar heeft als nadeel dat uw vormgeving waarschijnlijk wijzigt.</p>
+<p>Nadat u het document heeft gekoppeld aan het sjabloon zijn er twee belangrijke aanpassingen:</p>
+<p>Er verschijnt een nieuwe menu-optie ‘Respec’.</p>
+<p>De optie ‘Plakken’ voegt alleen nog niet-opgemaakte Unicode-tekst toe. U kunt dit omzeilen met de optie ‘Plakken speciaal’ (Alt+Ctrl+V). Hiermee kunt u opgemaakte tekst toevoegen.</p>
+<h2>Benodigde metadata toevoegen</h2>
+<p>Om het Word-bestand goed te kunnen transformeren naar een nieuwe ReSpec-werkversie moet u metadata meegeven. Hiervoor heeft de respec-werkbalk links de optie ‘Document’.</p>
+<p>Het voorblad wordt ‘gevoed’ vanuit scherm ‘Document’</p>
+<h3>Tabblad ‘Publicatie’</h3>
+<p>Voor de publicatie zijn onderstaande gegevens van belang (zie Figuur 10).</p>
+<p>‘Titel’ (1) wordt gebruikt in het voorwerk van de publicatie.</p>
+<p>‘Subtitel’ (2) is optioneel.</p>
+<p>‘Omschrijving’ is optioneel maar wel belangrijk voor ‘Search Engine Optimization’ (SEO). Bij zoekmachines komt de omschrijving onder de zoekresultaten te staan. Het maximale aantal lettertekens is 150.</p>
+<p>‘Identifier’ wordt gebruikt in verschillende url’s. Als de identifier is weggelaten wordt er een uri-bestendige variant van de titel als identifier gebruikt.</p>
+<p>‘Domein’ verwijst naar het project. In dit geval is er geen domein. Het domein is heel belangrijk in de opbouw van de url’s.</p>
+<p>‘Status’ (4) van het document geeft aan in welk stadium de publicatie is.</p>
+<p>‘Type’ (5) geeft het type publicatie aan.</p>
+<p>‘Licentie’ (14) geeft aan onder welke licentie het document wordt gepubliceerd.</p>
+<p>‘Publicatiedatum’ (7) wordt gebruikt als versie-aanduiding in de url.</p>
+<p>‘Voorgaande publicatiedatum’ (9) wordt gebruikt als versie-aanduiding in de url van de vorige versie. Als deze wordt weggelaten, dan wordt ‘Vorige versie’ niet getoond.</p>
+<p>‘Status’ van de voorgaande publicatie wordt gebruikt om de url samen te stellen.</p>
+<p>‘GitHub’ geeft aan of het blok ‘Doe mee’ (13) wordt getoond.</p>
+<p>Tabblad ‘Publicatie’</p>
+<h3>Tabblad ‘Inhoud’</h3>
+<p>Respec heeft meer informatie nodig over de opbouw van de publicatie. Op basis hiervan verandert de werking. In het scherm worden alle hoofdstukken opgesomd. Voorwaarde is wel dat de koppenstructuur (zie 3.1) met stijl ‘Kop 1’ is aangegeven. Respec zet dit om naar html-secties. Van elke sectie kunnen we op het hoogste niveau het type en het soort informatie opgeven.</p>
+<p>Het type sectie geeft aan of het voorwerk of een bijlage is. Bij optie ‘Voorwerk’ wordt het weggelaten uit de inhoudsopgave. De koppen krijgen in de publicatie geen nummering. Bij optie ‘Bijlage’ wordt de nummering met kapitale letters aangegeven.</p>
+<p>Bij het soort informatie is er één optie ‘Informatief’. Als de optie wordt weggelaten, ziet ReSpec het als normatieve informatie. Als een sectie wordt gemarkeerd als informatief, dan wordt onder de kop de tekst ‘Dit onderdeel is niet normatief’ weergegeven. Daarnaast worden bibliografische verwijzingen (zie 0) aangegeven als ‘Informatieve referenties’.</p>
+<p>Respec kan ook specifieke informatie toevoegen. U kunt deze aanvinken.</p>
+<p>Tabblad ‘Inhoud’</p>
+<h3>Tabblad ‘Voorwerk’</h3>
+<p>Met dit tabblad worden de auteurs (12) en redacteuren (11) opgegeven. Zie ook Figuur 10 voor de nummering. Er is minimaal één redacteur nodig, auteurs zijn optioneel. U voegt een auteur of redacteur toe met optie ‘Nieuw’. Vul daarna naam, bedrijfsnaam en url van het bedrijf in. De url moet volledig zijn, dus inclusief ‘https://’. Als u een auteur of redacteur wilt verwijderen, selecteert u de desbetreffende naam en maakt u veld ‘Naam’ leeg.</p>
+<p>Tabblad ‘Voorwerk’</p>
+<h3>Tabblad ‘Bibliografie’</h3>
+<p>Respec ondersteunt bibliografische referenties (zie 4.6). U kunt deze opgeven met tabblad ‘Bibliografie’. U voegt een publicatie toe met optie ‘Nieuw’. Vul daarna de onderstaande velden in. Alle velden zijn optioneel behalve veld ‘Titel’. Als u een publicatie wilt verwijderen, selecteert u de desbetreffende titel en maakt u veld ‘Titel’ leeg.</p>
+<p>Tabblad ‘Bibliografie’</p>
+<p>Het is wel belangrijk om de identifier op te nemen omdat hiermee in de tekst wordt verwezen naar de bibliografische bron (zie 4.6).</p>
+<h3>Tabblad ‘Belangrijk’</h3>
+<p>Dit tabblad is voor de workflow word2werkversie niet van belang. De workflow word2publicatie gebruikt het om de definitieve publicatie op de server docs.geostandaarden.nl te plaatsen. In andere gevallen wordt de test-omgeving test.docs.geostandaarden.nl gebruikt.</p>
+<p>Tabblad ‘Belangrijk’</p>
+<h1>Ondersteunde Word-functionaliteit</h1>
+<h2>Koppenstructuur</h2>
+<p>Alle transformaties in de word2respec-workflow zijn gebaseerd op het gebruik van de stijlen ‘Kop 1’ t/m ‘Kop 9’. Overigens biedt dit veel extra mogelijkheden binnen Word. Het venster ‘Stijlen’ opent (en sluit) u met toetscombinatie Alt+Ctrl-Shift+S.</p>
+<p>Navigatie op basis van de koppenstructuur</p>
+<h2>Opsommingen</h2>
+<p>Er zijn twee typen opsommingen, genummerd en met tekens. Hiervoor dient u de Word-functie ‘Opsommingen’ te gebruiken. De opsommingen mogen gedefinieerd zijn in de stijl. De opsomming wordt omgezet naar opsommingen zoals ze voor het specifieke domein zijn gedefinieerd in het css-bestand. Dus het is mogelijk dat een opsomming met kapitale letters wordt omgezet naar Romeinse cijfers.</p>
+<h2>Verwijzingen</h2>
+<p>Omdat de koppenstructuur, figuurnummers en tabelnummers worden gegenereerd door ReSpec, is het niet verstandig om verwijzingen als tekst op te nemen. Dit kan op twee manieren:</p>
+<p>met kruisverwijzingen,</p>
+<p>met interne verwijzingen.</p>
+<h3>Kruisverwijzingen</h3>
+<p>Hiervoor gebruikt u de Word-functie ‘Kruisverwijzing’ (Alt+Ctrl+Shift+K). Hiermee kunt u verwijzen naar alle mogelijke genummerde alinea’s.</p>
+<p>Scherm ‘Kruisverwijzing’</p>
+<p>Weergave van een kruiskoppeling in ReSpec</p>
+<h3>Hyperlinks</h3>
+<p>Ook hyperlinks worden doorgegeven in de ReSpec-weergave. Met scherm ‘Hyperlink invoegen’ (Ctrl+K) voegt u een hyperlink toe, bijvoorbeeld naar hoofdstuk Repository word2werkversie.</p>
+<p>Scherm voor het invoegen en bewerken van hyperlinks</p>
+<p>Weergave van een hyperlink in ReSpec</p>
+<h2>Figuren</h2>
+<p>Het veiligst is om figuren met tekstomloop ‘In tekstregel’ te gebruiken. De transformatie moet namelijk weten waar in de tekst een figuur ‘verankerd’ is. Dit is in Word de standaard-mogelijkheid voor het plaatsen van figuren. De omvang van een figuur wordt berekend aan de hand van de breedte. De verhouding tussen de figuurbreedte en tekstbreedte wordt gebruikt in de uiteindelijke ReSpec-weergave. Als de figuurbreedte meer dan 90% van de tekstbreedte is, wordt het uitgevuld naar de volledige tekstbreedte.</p>
+<p>Het is mogelijk om met kruisverwijzingen (zie 3.3.1) te verwijzen naar een figuur. De alinea onder de figuur wordt omgezet naar een figuurbijschrift als u het markeert met stijl ‘Figuurbijschrift’ of ‘Bijschrift’.</p>
+<h2>Tabellen</h2>
+<p>Tabellen worden volledig door de workflow word2respec ondersteund:</p>
+<p>Tabelstijlen en tabeleigenschappen worden ondersteund.</p>
+<p>De celopmaak wordt overgenomen.</p>
+<p>Kolombreedte wordt overgenomen.</p>
+<p>Samengevoegde cellen verticaal en horizontaal worden ondersteund.</p>
+<p>Als u de alinea boven de tabel (zie Tabel 1) markeert met stijl ‘Tabeltitel’ of ‘Bijschrift’, dan wordt de alinea verwerkt als tabeltitel. In de tekst kunt u verwijzen naar de tabeltitel (zie 3.3.1). Merk op dat ReSpec in de weergave de tabeltitel niet weergeeft met een nummering. Onderstaand is een voorbeeldtekst.</p>
+<p>Vergelijking met huidige rechtsfiguren en RO Standaarden</p>
+<p>Onderwerp</p>
+<p>Specificatie</p>
+<p>Vergelijkbaar met / voortzetting van huidige rechtsfiguur</p>
+<p>bestemmingsplan, uitwerkingsplan, wijzigingsplan en inpassingsplan op basis van Wro</p>
+<p>beheersverordening op basis van Wro</p>
+<p>bestemmingsplan met verbrede reikwijdte op basis van Crisis- en herstelwet</p>
+<p>welstandsnota op basis van Woningwet</p>
+<p>erfgoedverordening op basis van Monumentenwet</p>
+<p>algemene plaatselijke verordening op basis van Gemeentewet</p>
+<p>…</p>
+<p>Voortzetting van instrument in RO Standaarden</p>
+<p>Ja, bestemmingsplan en beheersverordening</p>
+<p>INSPIRE-thema</p>
+<p>Planned Land Use: SpatialPlan</p>
+<h2>Voetnoten</h2>
+<p>De transformatie ondersteunt niet-complexe voetnoten. Onderstaand is een voorbeeldtekst.</p>
+<p>Op grond van artikel 20.26 lid 2 Omgevingswet worden besluiten en andere rechtsfiguren op grond van die wet die bij ministeriële regeling zijn aangeduid als omgevingsdocument, ontsloten via DSO-LV. De bedoelde ministeriële regeling is de Regeling standaarden publicaties Omgevingswet. Deze regeling wijst besluiten en andere rechtsfiguren aan als omgevingsdocument en stelt het verplicht om die omgevingsdocumenten, en ontwerpen daarvan, elektronisch vorm te geven conform de Standaard voor Officiële Publicaties, het InformatieModel Omgevingswet en het voor het betreffende omgevingsdocument voorgeschreven toepassingsprofiel. Ook bevat deze regeling de verplichting om omgevingsdocumenten voor publicatie aan te bieden aan het Bronhouderkoppelvlak van de LVBB.</p>
+<p>Respec-weergave van een voetnoot</p>
+<h1>Ondersteunde ReSpec-functionaliteit</h1>
+<p>In ReSpec-weergave komen tekstsoorten voor waarvoor we een specifieke Word-opmaak hebben afgesproken. U kunt deze toevoegen met de opties ‘Tekstsoorten’ en ‘Code’, links in de werkbalk.</p>
+<h2>Code</h2>
+<p>Een code-blok wordt in Word aangegeven door het hele blok te markeren met menu-optie ‘Code’. Onderstaand is voorbeeldtekst. Let erop dat de inspringing met een tab-teken moet.</p>
+<p>&lt;xsl:template match=&quot;w14:checkbox&quot;&gt;</p>
+<p>&lt;xsl:element name=&quot;input&quot;&gt;</p>
+<p>&lt;xsl:attribute name=&quot;class&quot; select=&quot;string(&#39;task-list-item-checkbox&#39;)&quot;/&gt;</p>
+<p>&lt;xsl:attribute name=&quot;id&quot; select=&quot;generate-id(.)&quot;/&gt;</p>
+<p>&lt;xsl:attribute name=&quot;style&quot; select=&quot;string(&#39;margin-right: 2mm;&#39;)&quot;/&gt;</p>
+<p>&lt;xsl:attribute name=&quot;type&quot; select=&quot;string(&#39;checkbox&#39;)&quot;/&gt;</p>
+<p>&lt;xsl:if test=&quot;w14:checked/@w14:val=1&quot;&gt;</p>
+<p>&lt;xsl:attribute name=&quot;checked&quot;/&gt;</p>
+<p>&lt;/xsl:if&gt;</p>
+<p>&lt;/xsl:element&gt;</p>
+<p>&lt;/xsl:template&gt;</p>
+<p>Code kan ook binnen een alinea staan. Dan is het voldoende om dit gedeelte te markeren met optie ‘Code’.</p>
+<p>Voorbeeld van een code-blok in Word</p>
+<h2>Citaat</h2>
+<p>Een citaat wordt aangegeven door de alinea te selecteren en optie ‘Tekstsoorten’, ‘Citaat’ te kiezen.</p>
+<p>Dit is een voorbeeld van een citaat.</p>
+<p>Weergave van tekstsoorten ‘Citaat’, ‘Issue’ en ‘Noot’ in Word</p>
+<h2>Issue</h2>
+<p>In ReSpec is het mogelijk om extra functionaliteit voor issues op te nemen. Zet in de eerste alinea het issue waarnaar gekoppeld moet worden en de titel. Selecteer de tekst en markeer het met ‘Teksoorten’, ‘Issue’.</p>
+<p>Issue 22: Invullen van dct:license en dct:rights</p>
+<p>dct:license en dct:rights zijn te vinden in resource én in dataservice. Wanneer moet je nu welke eigenschap invullen?</p>
+<h2>Redactionele noot</h2>
+<p>Een redactionele noot wordt aangegeven door de alinea te markeren met menu-optie ‘Tekstsoorten’, ‘Noot’. Onderstaand is voorbeeldtekst.</p>
+<p>Voor de beschrijving verwijzen we naar de documentatie in de bijlage.</p>
+<h2>Voorbeeld</h2>
+<p>Een voorbeeld wordt aangegeven door de alinea te selecteren en optie ‘tekstsoorten’, ‘Voorbeeld’ te kiezen. Het is mogelijk om een code-blok binnen een voorbeeld aan te geven. Onderstaand is voorbeeldtekst.</p>
+<p>Op grond van artikel 20.26 lid 2 Omgevingswet worden besluiten en andere rechtsfiguren op grond van die wet die bij ministeriële regeling zijn aangeduid als omgevingsdocument, ontsloten via DSO-LV. De bedoelde ministeriële regeling is de Regeling standaarden publicaties Omgevingswet. Deze regeling wijst besluiten en andere rechtsfiguren aan als omgevingsdocument en stelt het verplicht om die omgevingsdocumenten, en ontwerpen daarvan, elektronisch vorm te geven conform de Standaard voor Officiële Publicaties, het InformatieModel Omgevingswet en het voor het betreffende omgevingsdocument voorgeschreven toepassingsprofiel. Ook bevat deze regeling de verplichting om omgevingsdocumenten voor publicatie aan te bieden aan het Bronhouderkoppelvlak van de LVBB.</p>
+<p>Voorbeeld van een voorbeeld in Word</p>
+<h2>Bibliografische referenties</h2>
+<p>Met menu-optie ‘Document’ tabblad ‘Bibliografie’ (zie 2.3.4) in de respec-werkbalk kunt u publicaties opgeven waarnaar u met een bibliografische referentie kunt verwijzen. Dit kan door de identifier van de publicatie tussen dubbele rechte haken te plaatsen: [[DONL]]. Respec voegt dan een bijlage toe met normatieve of informatieve referenties, afhankelijk van de opgegeven soort informatie (zie 2.3.2).</p>
+<p>Bijlage met normatieve referenties</p>
+<p>Als een referentie ontbreekt, geeft ReSpec een foutmelding</p>
+<h2>Index</h2>
+<p>De transformatie ondersteunt het toevoegen van een index (zie 2.3.2). Met behulp van menu-optie ‘Index’ kunt u begrippen opnemen die in het register worden opgenomen.</p>
+<p>Weergave van een index-markering in Word</p>
+<p>Respec-weergave van de index</p>
+</body>
+</html>
